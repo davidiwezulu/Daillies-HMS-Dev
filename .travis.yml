@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - "7.1"
+
+before_script:
+  - mysql -e 'create database homestead_test;'
+  - composer self-update
+  - composer install --no-interaction
+
+services:
+  - mysql
+
+script:
+- vendor/bin/phpunit
