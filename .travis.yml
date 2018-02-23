@@ -15,3 +15,4 @@ services:
 
 script:
 - vendor/bin/phpunit
+- if [[ $TRAVIS_PHP_VERSION != hhv* ]] ; then php bin/phpcs --config-set php_path php; fi
