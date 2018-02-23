@@ -3,6 +3,17 @@ language: php
 php:
   - "7.1"
 
+# Declare versions of PHP to use. Use one decimal max.
+# @link http://docs.travis-ci.com/user/build-configuration/
+matrix:
+   
+    include:
+
+        - env: SNIFF=1
+
+        # aliased to a recent hhvm version
+        - php: 'hhvm
+
 before_script:
   - cp .env.travis .env
   - mysql -e 'create database homestead_test;'
